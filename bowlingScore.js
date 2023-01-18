@@ -53,4 +53,4 @@ console.log(score(rolls));
 var games = [[3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]];
 console.log(bestScore(games));
 
-module.exports
+module.exports = { score, bestScore };
