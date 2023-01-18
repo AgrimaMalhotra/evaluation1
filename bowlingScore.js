@@ -1,6 +1,7 @@
 function calculateScore(roundScore) {
     let index = 0;
     let eachRoundScore, totalScore = 0;
+
     while (index < 10) {
         eachRoundScore = roundScore[index].reduce((a, b) => a + b, 0);
         if (index == 9) {
@@ -27,6 +28,9 @@ function calculateScore(roundScore) {
 }
 
 function score(rolls) {
+    if (rolls.length != 10) {
+        throw new Error('Invalid');
+    }
     let roundScore = {};
     for (let index = 0; index < rolls.length; index += 2) {
         if (index == 18) {
