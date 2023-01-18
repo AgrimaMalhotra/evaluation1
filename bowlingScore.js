@@ -28,8 +28,8 @@ function calculateScore(roundScore) {
 }
 
 function score(rolls) {
-    if (rolls.length != 10) {
-        throw new Error('Invalid');
+    if (!Array.isArray(rolls) || rolls.length == 0) {
+        throw new Error('Invalid array');
     }
     let roundScore = {};
     for (let index = 0; index < rolls.length; index += 2) {
@@ -38,6 +38,9 @@ function score(rolls) {
             break;
         }
         roundScore[parseInt(index / 2)] = rolls.slice(index, index + 2);
+    }
+    if (Object.keys(roundScore).length != 10) {
+        throw new Error('Invalid');
     }
 
     return calculateScore(roundScore);
