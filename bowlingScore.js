@@ -47,9 +47,9 @@ function score(rolls) {
 
 }
 function bestScore(games) {
-    let max = 0;
-    for (let index = 0; index < games.length - 1; index++) {
-        max = Math.max(score(games[index], games[index + 1]));
+    let max = score(games[0]);
+    for (let index = 1; index < games.length; index++) {
+        max = Math.max(max, score(games[index]));
     }
     return max;
 }
@@ -57,7 +57,7 @@ function bestScore(games) {
 var rolls = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
 console.log(score(rolls));
 
-var games = [[3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]];
+var games = [[3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10], [6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 console.log(bestScore(games));
 
 module.exports = { score, bestScore };
