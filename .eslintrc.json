@@ -6,14 +6,30 @@
     },
     "extends": "eslint:recommended",
     "overrides": [
+        {
+            "files": [
+                "**/*.test.js"
+            ],
+            "env": {
+                "jest": true
+            },
+            "plugins": [
+                "jest"
+            ],
+            "rules": {}
+        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "plugins": [
+        "jest"
+    ],
     "rules": {
+        "no-unused-vars": "off",
         "indent": [
             "error",
-            4
+            2
         ],
         "linebreak-style": [
             "error",
